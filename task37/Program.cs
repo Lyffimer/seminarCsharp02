@@ -4,7 +4,7 @@
 
 int[] multOfElem(int[] array)
 {
-    int[] col = new int[array.Length/2 + array.Length%2];
+    // int[] col = new int[array.Length/2 + array.Length%2];
     
     int[] col; 
     if(array.Length % 2 == 0)
