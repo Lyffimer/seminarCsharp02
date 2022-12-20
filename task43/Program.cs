@@ -24,18 +24,49 @@ double ReadInt(string messages)
 
 
 // Ручной ввод и передача в метод. можно сделать запрос коф из метода, но мне кажется так правильнее
-(double, double) IntersectionSearch(double b1, double k1, double b2, double k2)
+// (double, double) IntersectionSearch(double b1, double k1, double b2, double k2)
+// {
+//     double x;
+//     double y;
+//     x = -(b1 - b2)/(k1 - k2);
+//     y = k2*x +b2;
+//     return (x, y);
+// }
+
+// double B1 = ReadInt("Введите b1: ");
+// double K1 = ReadInt("Введите k1: ");
+// double B2 = ReadInt("Введите b2: ");
+// double K2 = ReadInt("Введите k2: ");
+// if(K1 == K2)
+// {
+//     System.Console.WriteLine("Линии паралельны!");
+// }
+// else
+// {
+// (double X, double Y) = IntersectionSearch(B1, K1, B2, K2);
+// System.Console.WriteLine($"Координаты точки пересечения ({X};{Y})");
+// }
+
+
+double Readdouble(string messages)
 {
-    double x;
-    double y;
-    x = -(b1 - b2)/(k1 - k2);
-    y = k2*x +b2;
-    return (x, y);
+    Console.WriteLine(messages);
+    return Convert.ToDouble(Console.ReadLine());
+}
+double b1 =Readdouble("Введите коэффициент b1 первой пряммой заданой уравнением y = k1 * x + b1:");
+double k1 =Readdouble("Введите коэффициент k1 первой пряммой заданой уравнением y = k1 * x + b1:");
+double b2 =Readdouble("Введите коэффициент b2 первой пряммой заданой уравнением y = k2 * x + b2:");
+double k2 =Readdouble("Введите коэффициент k2 первой пряммой заданой уравнением y = k2 * x + b2:");
+double x;
+double y;
+if (k1==k2)
+{
+    Console.WriteLine("Линии с такими коэффициент к1 и к2 не пересикаются.");
+}
+else 
+{
+    x=(b2-b1)/(k1-k2);
+    y=k1*x+b1;
+    Console.WriteLine($"Линии пересекутся в точке с координатами х = {x}, y = {y}.");
 }
 
-double B1 = ReadInt("Введите b1: ");
-double K1 = ReadInt("Введите k1: ");
-double B2 = ReadInt("Введите b2: ");
-double K2 = ReadInt("Введите k2: ");
-(double X, double Y) = IntersectionSearch(B1, K1, B2, K2);
-System.Console.WriteLine($"Координаты точки пересечения ({X};{Y})");
